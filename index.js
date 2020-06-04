@@ -7,9 +7,9 @@ client.login(settings.botToken)
 setInterval(() => {
   settings.services.forEach((s) => {
     exec('systemctl status ' + s.name, (_, out) => {
-      const gotData = out.split('\n').slice(0, 3)
-      const enabled = gotData[1] ? gotData[1].includes('; enabled') : false
-      const active = gotData[2] ? gotData[2].includes('active (running)') : false
+      const gotData = out.split('\n').filter((l) => l.trim().includes('Loaded') || l.trim().includes('Active'))
+      const enabled = gotData[0] ? gotData[0].includes('; enabled') : false
+      const active = gotData[1] ? gotData[1].includes('active (running)') : false
       const result =
         s.name.toUpperCase() + ' (클러스터 ' + s.cluster + '번)\n '
         + (active ? ':green_circle: **정상**' : ':red_circle: **종료됨**') + ', ' + (enabled ? '활성화 됨' : '비활성화 됨')
