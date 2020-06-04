@@ -1,0 +1,12 @@
+{
+  "botToken": "",
+  "interval": 5000,
+  "channels": [ "718055940342939708" ],
+  "services": [
+    {
+      "name": "mariadb",
+      "cluster": 0,
+      "message": "718060956831186975"
+    }
+  ]
+}

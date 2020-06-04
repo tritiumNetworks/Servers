@@ -1,0 +1,11 @@
+{
+  "name": "Servers",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/tritiumNetworks/Servers.git",
+  "author": "pmh-only <pmhstudio.pmh@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  }
+}
